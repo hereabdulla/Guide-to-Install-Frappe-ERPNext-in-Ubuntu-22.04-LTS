@@ -119,6 +119,13 @@ Now press (Ctrl-X) to exit
     sudo -H pip3 install frappe-bench
     
     bench --version
+
+    Depending on your OS version and python/pip version, you may get an error here regarding an externally-managed-environment
+
+    You can work around this for now by running or use virtualenv
+
+    pip install frappe-bench --break-system-packages
+
     
 ### STEP 13 initilise the frappe bench & install frappe latest version 
 
