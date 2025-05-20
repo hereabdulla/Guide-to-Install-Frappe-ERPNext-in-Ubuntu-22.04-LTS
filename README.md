@@ -91,12 +91,12 @@ Now press (Ctrl-X) to exit
     
     sudo apt-get install redis-server
 
-### STEP 9 install Node.js 14.X package
+### STEP 9 install Node.js 22.X package
 
     sudo apt install curl 
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
     source ~/.profile
-    nvm install 14.15.0  
+    nvm install 22.15.0  
 
 ### STEP 10  install Yarn
 
@@ -106,7 +106,12 @@ Now press (Ctrl-X) to exit
 
 ### STEP 11 install wkhtmltopdf
 
-    sudo apt-get install xvfb libfontconfig wkhtmltopdf
+    wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_amd64.deb && \
+    sudo dpkg -i wkhtmltox_0.12.6.1-3.jammy_amd64.deb && \
+    sudo cp /usr/local/bin/wkhtmlto* /usr/bin/ && \
+    sudo chmod a+x /usr/bin/wk*
+    sudo rm wk* && \
+    sudo apt --fix-broken install -y
     
 
 ### STEP 12 install frappe-bench
